@@ -38,9 +38,13 @@ Run this in your terminal:
 pip install bleak pycryptodome
 ```
 
+
+
 ### Step 2: Put a Shade Into Pairing Mode
 
 Press and hold the shade’s manual/program button until the LED enters pairing mode (flashing pattern specific to your model). Only one controller should be connected; close the PowerView app or disconnect the hub if necessary.
+
+
 
 ### Step 3: Extract BLE Name and Home Key
 
@@ -59,6 +63,8 @@ Shade 'Left 1':
 ```
 Record the BLE name and the 32‑character hex home key for each shade you want to control.
 
+
+
 ### Step 4: Configure test_blind.py
 
 Open test_blind.py and set:
@@ -69,7 +75,19 @@ HOMEKEY_HEX = "4b26434748e662bf9beb185a85dc3b5a"
 TARGET_POSITION = 0  # 0 = closed, 100 = open
 ```
 
+
+
+### Step 5: Run the Control Script
+
+Execute:
+
+```bash
+python test_blind.py
+```
+
 Expected behavior: the script scans, connects, writes the encrypted command; the shade LED flashes (e.g., green then blue) and the shade moves to the target position.
+
+
 
 ### Step 6: Repeat for Additional Shades
 
